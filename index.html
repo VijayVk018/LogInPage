@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Document</title>
+     <!-- <link rel="stylesheet" href="../JavaScript/LogIn.css">
+     <script src="../JavaScript/LogIn.js" defer></script> -->
+</head>
+<body>
+    <div id="main">
+        <div id="sub">
+            <div id="logindiv">
+                <div id="loginpage">
+                   <form>
+                    <h1 id="heading">LogIn</h1>
+                    <input type="email" placeholder="Enter Email"  id="emailinput">
+                    <br>
+                    <input type="password" placeholder="Enter password" id="passinput">
+                    <img id="imgclo" src="D:\WebTechnology\JavaScript\login\monkeyclose.png" onmousedown="visib()" onmouseup="hides()" onclick="monkeyvis()">
+                    <br>
+                    <h3 id="msg"></h3>
+                    <br>
+                    <input type="submit" value="LogIn" id="buttoninput" onclick="fun()">
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var email="vijay@gmail.com";
+var password="123";
+function fun()
+{
+   var usergivenUSID= document.getElementById("emailinput").value
+   var usergivenUSP=document.getElementById("passinput").value
+   if(email!=usergivenUSID&&password==usergivenUSP)
+   {
+      document.getElementById("buttoninput").setAttribute("type","text")
+      document.getElementById("emailinput").style.borderColor="red"
+      document.getElementById("main").style.backgroundImage="linear-gradient(90deg,red,purple)"
+      document.getElementById("passinput").style.borderColor="blue"
+      document.getElementById("msg").innerHTML="Wrong EmailId"
+      document.getElementById("msg").style.color="red"
+   }
+   else if(email==usergivenUSID&&password==usergivenUSP)
+   {
+      document.getElementById("emailinput").style.borderColor="blue"
+      document.getElementById("passinput").style.borderColor="blue"
+      document.getElementById("main").style.backgroundImage="linear-gradient(90deg,hotpink,purple)"
+      document.getElementById("buttoninput").setAttribute("type","submit")
+      document.getElementById("msg").innerHTML=""
+      var fom=document.forms;
+      fom[0].action="file:///D:/WebTechnology/JavaScript/AdvertiseAdd.html"
+   }
+   else if(email==usergivenUSID&&password!=usergivenUSP)
+   {
+      document.getElementById("buttoninput").setAttribute("type","text")
+      document.getElementById("passinput").style.borderColor="red"
+      document.getElementById("main").style.backgroundImage="linear-gradient(90deg,purple,red)"
+      document.getElementById("emailinput").style.borderColor="blue"
+      document.getElementById("msg").innerHTML="Wrong password"
+      document.getElementById("msg").style.color="red"
+   }
+   else
+   {
+      document.getElementById("buttoninput").setAttribute("type","text")
+      document.getElementById("passinput").style.borderColor="red"
+      document.getElementById("emailinput").style.borderColor="red"
+      document.getElementById("main").style.backgroundImage="linear-gradient(90deg,red,red)"
+      document.getElementById("msg").innerHTML="Wrong EmailId & password"
+      document.getElementById("msg").style.color="red"
+   }
+}
+function visib()
+{
+   
+   document.getElementById("imgclo").setAttribute("style","src=D:\WebTechnology\JavaScript\JavaScript\newProject\monkeyvisi.png")
+   document.getElementById("imgclo").style.rotate="360deg"
+   document.getElementById("passinput").setAttribute("type","text")
+}
+function hides()
+{
+   document.getElementById("passinput").setAttribute("type","password")
+}
+    </script>
+</body>
+</html>
+
+
+<style>
+
+*{
+    padding: 0px;
+    margin:0px;
+}
+#main{
+    width:99vw;
+    height: 100vh;
+    background-image: linear-gradient(90deg,hotpink,purple);
+}
+#sub{
+    width:60vw;
+    height: 80vh;
+    background-image: linear-gradient(90deg,brown,royalblue);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    position: absolute;
+    right:20vw;
+    bottom:10vh;
+}
+#logindiv{
+    width:35vw;
+    height:60vh;
+    background-color: black;
+    border-radius: 10px;
+    position: absolute;
+    right:12vw;
+    bottom:10vh;
+}
+#loginpage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#heading{
+    color:white;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+#emailinput{
+    height: 5vh;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    border-color: blue;
+    border:3px solid blue;
+    border-radius: 10px;
+    background-color: transparent;
+}
+#passinput{
+    height:5vh;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+    border:3px solid blue;
+    border-radius:10px;
+    background-color: transparent;
+}
+#buttoninput{
+    width:7vw;
+    height:5vh;
+    font-size:20px;
+    color:white;
+    position: absolute;
+    left:13vw;
+    bottom:20vh;
+    border:3px solid green;
+    border-radius: 10px;
+    background-color: transparent;
+}
+#buttoninput:hover{
+    background-color:brown;
+}
+#imgclo{
+    width:2vw;
+    height: 5vh;
+    position: absolute;
+    left:25vw;
+    bottom:33vh;
+    cursor:pointer
+}
+#msg{
+    font-size: 15px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+</style>
